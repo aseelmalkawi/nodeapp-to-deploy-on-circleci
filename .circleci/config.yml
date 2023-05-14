@@ -5,4 +5,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: echo "hello"
+      - run: docker build -t nodeapp .
+      - run: docker tag nodeapp aseelibrahimm/nodeapp:lts
+      - run: docker login -u aseelibrahimm -p aseel2000
+      - run: docker push aseelibrahimm/nodeapp:lts
