@@ -1,19 +1,14 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-      - main
     docker:
         # specify the version you desire here
         - image: circleci/node:8.0
         - image: docker:17.09.1-ce-git  # enable the docker build support
-    working_directory: ~/repo
     steps:
      - checkout
      - setup_remote_docker:
         version: 20.10.14     
-     # build the docker image on success
      - run:
        when: on_success
        command: |
