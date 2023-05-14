@@ -8,7 +8,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t $nodeapp:latest .
+          command: docker build -t $nodeapp .
   publish-latest:
     environment:
       nodeapp: building-on-ci
@@ -19,5 +19,6 @@ jobs:
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
+            docker tag nodeapp aseelibrahimm/nodeapp:latest
             docker login -u "$DOCKERHUB_LOGIN" -p $DOCKER_PASSWORD
-            docker push $nodeapp:latest
+            docker push aseelibrahimm/nodeapp:latest
