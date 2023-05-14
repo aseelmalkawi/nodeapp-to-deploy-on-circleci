@@ -12,6 +12,7 @@ jobs:
         steps:
           - checkout
           - setup_remote_docker
+            version: 20.10.14
           # Download and cache dependencies
           - restore_cache:
             keys:
