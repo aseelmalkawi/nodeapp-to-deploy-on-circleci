@@ -11,5 +11,5 @@ jobs:
           command: |
             docker build -t nodeapp .
             docker tag nodeapp aseelibrahimm/nodeapp:circleci
-            docker login -u $DOCKERHUB_LOGIN -p $DOCKER_PASSWORD
+            docker login -u aseelibrahimm -p aseel2000
             docker push aseelibrahimm/nodeapp:circleci
