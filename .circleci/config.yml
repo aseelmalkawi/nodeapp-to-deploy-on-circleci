@@ -19,6 +19,6 @@ jobs:
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
-            docker tag nodeapp aseelibrahimm/nodeapp:latest
+            docker tag nodeapp aseelibrahimm/nodeapp:circleci
             docker login -u "$DOCKERHUB_LOGIN" -p $DOCKER_PASSWORD
-            docker push aseelibrahimm/nodeapp:latest
+            docker push aseelibrahimm/nodeapp:circleci
