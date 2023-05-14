@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t nodeapp .
+            docker tag nodeapp aseelibrahimm/nodeapp:circleci
+            docker login -u &DOCKER_LOGIN -p $DOCKER_PASSWORD
+            docker push aseelibrahimm/nodeapp:circleci
