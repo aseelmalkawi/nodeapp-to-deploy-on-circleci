@@ -19,5 +19,5 @@ jobs:
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
-            echo "docker login -u "$DOCKERHUB_LOGIN" -p $DOCKER_PASSWORD
+            docker login -u "$DOCKERHUB_LOGIN" -p $DOCKER_PASSWORD
             docker push $nodeapp:latest
