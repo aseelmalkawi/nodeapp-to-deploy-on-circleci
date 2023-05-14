@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/node:8.0
-    - image: docker:17.09.1-ce-git  # enable the docker build support
+      - image: circleci/node:8.0
+      - image: docker:17.09.1-ce-git  # enable the docker build support
     steps:
-    - setup_remote_docker:
-      version: 20.10.14     
-    - run:
-      command: docker ps
+      - setup_remote_docker:
+        version: 20.10.14     
+      - run:
+          command: docker ps
