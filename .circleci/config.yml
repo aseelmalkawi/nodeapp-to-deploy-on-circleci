@@ -12,4 +12,4 @@ jobs:
             docker build -t nodeapp .
             docker tag nodeapp aseelibrahimm/nodeapp:$CIRCLE_BUILD_NUM
             docker login -u &DOCKER_LOGIN -p $DOCKER_PASSWORD
-            docker push aseelibrahimm/nodeapp:circleci
+            docker push aseelibrahimm/nodeapp:$CIRCLE_BUILD_NUM
